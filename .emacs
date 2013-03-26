@@ -28,7 +28,7 @@
 
 ;; predictive mode
 ;; ================
-(add-to-list 'load-path "~/.emacs.d/predictive")
+;(add-to-list 'load-path "~/.emacs.d/predictive")
 
 
 ;;; no startup screen?
