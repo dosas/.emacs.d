@@ -6,16 +6,17 @@
 ;;; add .emacs.d/ to load path
 (add-to-list 'load-path "~/.emacs.d/")
 
-;;; yasnippet
-;;; =========
+;;; yasnippet (git clone https://github.com/capitaomorte/yasnippet.git)
+;;; =====================================================================
 ;; place snippets in ~/.emacs.d/snippets
 (add-to-list 'load-path "~/.emacs.d/yasnippet")
 (require 'yasnippet)
 (yas-global-mode 1)
 
 
-;; auto-complete-mode
-;; ==================
+;; auto-complete-mode (wget http://cx4a.org/pub/auto-complete/auto-complete-1.3.1.zip)
+;; =====================================================================================
+(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict") 
 (ac-config-default) 
@@ -96,8 +97,9 @@
       (add-hook hook (lambda () (flyspell-mode -1))))
 
 
-;; color theme
-;; =============
+;; color theme (wget http://download.savannah.gnu.org/releases/color-theme/color-theme-6.6.0.zip)
+;; ===============================================================================================
+;; required for solarized pre emacs24
 (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
 (require 'color-theme)
 (eval-after-load "color-theme"
@@ -106,8 +108,8 @@
      (color-theme-hober)))
 
 
-;; color theme solarized 
-;; ======================
+;; color theme solarized (git clone https://github.com/sellout/emacs-color-theme-solarized.git)
+;; ============================================================================================
 (add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized")
 (require 'color-theme-solarized)
 (color-theme-initialize)
