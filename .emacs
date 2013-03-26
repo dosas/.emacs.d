@@ -116,8 +116,9 @@
 (color-theme-solarized-dark)
 
 
-
-
+;; set font size (in 1/10pt)
+;; ============================
+(set-face-attribute 'default nil :height 110)
 
 
 
