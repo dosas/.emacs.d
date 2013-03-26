@@ -1,0 +1,8 @@
+# author dosas
+# name: itemize
+# key: itemize
+# --
+
+\begin{itemize}
+\item $0
+\end{itmeize}

@@ -1,0 +1,9 @@
+# author
+# name: \begin{equation} ... \end{equation}
+# key: equation
+# --
+\begin{equation}
+$0
+\label{eq:$1}
+\end{equation}
+

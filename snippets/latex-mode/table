@@ -1,0 +1,13 @@
+# author dosas
+# name: \begin{table} ... \end{table}
+# key: table
+# --
+
+\begin{table}[h]
+\centering
+\begin{tabular}{$1}
+$0
+\end{tabular}
+\caption{$2}
+\label{tab:$3}
+\end{table}

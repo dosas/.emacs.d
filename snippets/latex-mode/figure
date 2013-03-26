@@ -1,0 +1,12 @@
+# author dosas
+# name: \begin{figure} ... \end{figure}
+# key: figure
+# --
+
+\begin{figure}[h]
+\centering
+\includegraphics[$0]{$1}
+\caption{$2}
+\label{fig:$3}
+\end{figure}
+
