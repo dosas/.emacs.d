@@ -121,7 +121,27 @@
 (set-face-attribute 'default nil :height 110)
 
 
+;; LaTex
+;; =======================================
 
+;; reload doc view after latex compilation
+(add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
+;; to compile with C-c C-c
+(setq TeX-PDF-mode t)
 
+;; recommended by wiki page
+;(setq TeX-auto-save t)
+;(setq TeX-parse-self t)
+;(setq-default TeX-master nil)
+
+;(add-hook 'LaTeX-mode-hook 'visual-line-mode)
+;(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+;(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+
+;(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+;(setq reftex-plug-into-AUCTeX t)
+
+;; enable synctex with evince (http://emacswiki.org/emacs/AUCTeX#toc20)
+;; ====================================================================
 
