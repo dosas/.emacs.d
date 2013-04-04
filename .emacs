@@ -6,6 +6,7 @@
 ;;; add .emacs.d/ to load path
 (add-to-list 'load-path "~/.emacs.d/")
 
+
 ;;; yasnippet (git clone https://github.com/capitaomorte/yasnippet.git)
 ;;; =====================================================================
 ;; place snippets in ~/.emacs.d/snippets
@@ -14,18 +15,18 @@
 (yas-global-mode 1)
 
 
-;; auto-complete-mode (wget http://cx4a.org/pub/auto-complete/auto-complete-1.3.1.zip)
+;; auto-complete-mode (git clone https://github.com/auto-complete/auto-complete.git)
 ;; =====================================================================================
-(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
+(add-to-list 'load-path "~/.emacs.d/auto-complete")
+(add-to-list 'load-path "~/.emacs.d/auto-complete/lib/popup")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict") 
 (ac-config-default) 
-
+v
 
 ;; nice latex autocomplete mode
 ;; ============================
 ;(require 'auto-complete-auctex)
-
 
 ;; predictive mode
 ;; ================
