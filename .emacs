@@ -22,15 +22,12 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict") 
 (ac-config-default) 
-
+(ac-flyspell-workaround)
 
 ;; nice latex autocomplete mode
 ;; ============================
 ;(require 'auto-complete-auctex)
 
-;; predictive mode
-;; ================
-;(add-to-list 'load-path "~/.emacs.d/predictive")
 
 
 ;;; no startup screen?
@@ -146,3 +143,35 @@
 ;; enable synctex with evince (http://emacswiki.org/emacs/AUCTeX#toc20)
 ;; ====================================================================
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; predictive mode (git clone http://www.dr-qubit.org/git/predictive.git)
+;; ============================
+(add-to-list 'load-path "~/.emacs.d/predictive")
+(add-to-list 'load-path "~/.emacs.d/predictive/latex/")
+(add-to-list 'load-path "~/.emacs.d/predictive/texinfo/")
+(add-to-list 'load-path "~/.emacs.d/predictive/html/")
+(require 'predictive)
