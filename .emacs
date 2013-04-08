@@ -24,10 +24,6 @@
 (ac-config-default) 
 
 
-;; nice latex autocomplete mode
-;; ============================
-;(require 'auto-complete-auctex)
-
 ;; predictive mode
 ;; ================
 ;(add-to-list 'load-path "~/.emacs.d/predictive")
@@ -118,31 +114,54 @@
 
 
 ;; set font size (in 1/10pt)
-;; ============================
+;; =========================
 (set-face-attribute 'default nil :height 110)
 
 
-;; LaTex
-;; =======================================
+;; LaTex (wget http://ftp.gnu.org/pub/gnu/auctex/auctex-11.87.zip)
+;; ===============================================================
+
+;; use latest auctex 
+;(add-to-list 'load-path "~/.emacs.d/auctex-11.87")
+;(require 'auctex)
+;(add-to-list 'load-path "~/.emacs.d/auctex-11.87/preview")
+;(require 'preview-latex)
+(load "~/.emacs.d/auctex-11.87/auctex.el" nil t t)
+(load "~/.emacs.d/auctex-11.87/preview/preview-latex.el" nil t t)
 
 ;; reload doc view after latex compilation
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+(setq TeX-PDF-mode t) ;; use .pdf instead of .dvi
 
-;; to compile with C-c C-c
-(setq TeX-PDF-mode t)
-
-;; recommended by wiki page
-;(setq TeX-auto-save t)
-;(setq TeX-parse-self t)
-;(setq-default TeX-master nil)
+;; recommended
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil) ;; support for multi-file document structure
+;(setq TeX-view-program-list '(("Evince" "evince %q")))
+;(setq TeX-view-program-selection '((output-pdf "Evince")))
 
 ;(add-hook 'LaTeX-mode-hook 'visual-line-mode)
 ;(add-hook 'LaTeX-mode-hook 'flyspell-mode)
 ;(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 
-;(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-;(setq reftex-plug-into-AUCTeX t)
+;; include reftex
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
 
 ;; enable synctex with evince (http://emacswiki.org/emacs/AUCTeX#toc20)
 ;; ====================================================================
+
+
+;; compilation mode M-x compile
+;; ============================
+(setq compilation-auto-jump-to-first-erro t)
+(setq compilation-command "make -C .")
+
+
+
+
+
+
+
+
 
