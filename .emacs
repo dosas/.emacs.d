@@ -22,11 +22,7 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict") 
 (ac-config-default) 
-
-
-;; predictive mode
-;; ================
-;(add-to-list 'load-path "~/.emacs.d/predictive")
+(ac-flyspell-workaround)
 
 
 ;;; no startup screen?
@@ -165,3 +161,35 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; predictive mode (git clone http://www.dr-qubit.org/git/predictive.git)
+;; ============================
+(add-to-list 'load-path "~/.emacs.d/predictive")
+(add-to-list 'load-path "~/.emacs.d/predictive/latex/")
+(add-to-list 'load-path "~/.emacs.d/predictive/texinfo/")
+(add-to-list 'load-path "~/.emacs.d/predictive/html/")
+(require 'predictive)
