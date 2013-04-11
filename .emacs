@@ -17,13 +17,14 @@
 
 ;; auto-complete-mode (git clone https://github.com/auto-complete/auto-complete.git)
 ;; =====================================================================================
+;; documentation http://cx4a.org/software/auto-complete/manual.html
 (add-to-list 'load-path "~/.emacs.d/auto-complete")
 (add-to-list 'load-path "~/.emacs.d/auto-complete/lib/popup")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict") 
 (ac-config-default) 
 (ac-flyspell-workaround)
-
+(add-hook 'LaTeX-mode-hook 'auto-complete-mode)
 
 ;;; no startup screen?
 ;;; ==================
@@ -136,9 +137,9 @@
 ;(setq TeX-view-program-list '(("Evince" "evince %q")))
 ;(setq TeX-view-program-selection '((output-pdf "Evince")))
 
-;(add-hook 'LaTeX-mode-hook 'visual-line-mode)
-;(add-hook 'LaTeX-mode-hook 'flyspell-mode)
-;(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+(add-hook 'LaTeX-mode-hook 'visual-line-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 
 ;; include reftex
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
@@ -147,6 +148,18 @@
 ;; enable synctex with evince (http://emacswiki.org/emacs/AUCTeX#toc20)
 ;; ====================================================================
 
+;; predictive mode (git clone http://www.dr-qubit.org/git/predictive.git)
+;; ======================================================================
+;; documentation http://www.dr-qubit.org/download.php?file=predictive/predictive-user-manual/predictive-user-manual.pdf
+(add-to-list 'load-path "~/.emacs.d/predictive")
+;; dictionary locations
+(add-to-list 'load-path "~/.emacs.d/predictive/latex/")
+(add-to-list 'load-path "~/.emacs.d/predictive/texinfo/")
+(add-to-list 'load-path "~/.emacs.d/predictive/html/")
+(require 'predictive)
+;(add-hook 'text-mode-hook 'predictive-mode)
+(add-hook 'LaTeX-mode-hook 'predictive-mode)
+
 
 ;; compilation mode M-x compile
 ;; ============================
@@ -154,42 +167,3 @@
 (setq compilation-command "make -C .")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;; predictive mode (git clone http://www.dr-qubit.org/git/predictive.git)
-;; ============================
-(add-to-list 'load-path "~/.emacs.d/predictive")
-(add-to-list 'load-path "~/.emacs.d/predictive/latex/")
-(add-to-list 'load-path "~/.emacs.d/predictive/texinfo/")
-(add-to-list 'load-path "~/.emacs.d/predictive/html/")
-(require 'predictive)
