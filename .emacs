@@ -137,9 +137,10 @@
 ;(setq TeX-view-program-list '(("Evince" "evince %q")))
 ;(setq TeX-view-program-selection '((output-pdf "Evince")))
 
-(add-hook 'LaTeX-mode-hook 'visual-line-mode)
-(add-hook 'LaTeX-mode-hook 'flyspell-mode)
-(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+;; TODO fix this
+;(add-hook 'LaTeX-mode-hook 'visual-line-mode)
+;(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+;(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 
 ;; include reftex
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
@@ -149,16 +150,17 @@
 ;; ====================================================================
 
 ;; predictive mode (git clone http://www.dr-qubit.org/git/predictive.git)
+;; makes problems in latex
 ;; ======================================================================
 ;; documentation http://www.dr-qubit.org/download.php?file=predictive/predictive-user-manual/predictive-user-manual.pdf
-(add-to-list 'load-path "~/.emacs.d/predictive")
+;(add-to-list 'load-path "~/.emacs.d/predictive")
 ;; dictionary locations
-(add-to-list 'load-path "~/.emacs.d/predictive/latex/")
-(add-to-list 'load-path "~/.emacs.d/predictive/texinfo/")
-(add-to-list 'load-path "~/.emacs.d/predictive/html/")
-(require 'predictive)
+;(add-to-list 'load-path "~/.emacs.d/predictive/latex/")
+;(add-to-list 'load-path "~/.emacs.d/predictive/texinfo/")
+;(add-to-list 'load-path "~/.emacs.d/predictive/html/")
+;(require 'predictive)
 ;(add-hook 'text-mode-hook 'predictive-mode)
-(add-hook 'LaTeX-mode-hook 'predictive-mode)
+;(add-hook 'LaTeX-mode-hook 'predictive-mode)
 
 
 ;; compilation mode M-x compile
