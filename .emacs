@@ -165,7 +165,7 @@
 
 ;; compilation mode M-x compile
 ;; ============================
-(setq compilation-auto-jump-to-first-erro t)
+(setq compilation-auto-jump-to-first-error t)
 (setq compilation-command "make -C .")
 
 
