@@ -9,6 +9,9 @@
 ;;; make backspace behave as usual  (http://www.gnu.org/software/emacs/manual/html_node/emacs/DEL-Does-Not-Delete.html)
 (normal-erase-is-backspace-mode 1)
 
+;;; C-h does same thing as in bash
+(global-set-key (kbd "C-h") 'delete-backward-char)
+
 ;;; yasnippet (git clone https://github.com/capitaomorte/yasnippet.git)
 ;;; =====================================================================
 ;; place snippets in ~/.emacs.d/snippets
