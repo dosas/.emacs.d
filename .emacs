@@ -6,6 +6,8 @@
 ;;; add .emacs.d/ to load path
 (add-to-list 'load-path "~/.emacs.d/")
 
+;;; make backspace behave as usual  (http://www.gnu.org/software/emacs/manual/html_node/emacs/DEL-Does-Not-Delete.html)
+(normal-erase-is-backspace-mode 1)
 
 ;;; yasnippet (git clone https://github.com/capitaomorte/yasnippet.git)
 ;;; =====================================================================
