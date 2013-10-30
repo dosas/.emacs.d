@@ -1,0 +1,7 @@
+# author dosas
+# name: noindent
+# key: noindent
+# --
+
+\setlength{\parindent}{0pt} 
+$0

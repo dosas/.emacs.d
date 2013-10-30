@@ -7,7 +7,7 @@
 (add-to-list 'load-path "~/.emacs.d/")
 
 ;;; make backspace behave as usual  (http://www.gnu.org/software/emacs/manual/html_node/emacs/DEL-Does-Not-Delete.html)
-(normal-erase-is-backspace-mode 1)
+;(normal-erase-is-backspace-mode 0)
 
 ;;; C-h does same thing as in bash
 (global-set-key (kbd "C-h") 'delete-backward-char)

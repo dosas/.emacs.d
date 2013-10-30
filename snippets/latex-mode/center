@@ -1,0 +1,8 @@
+# author dosas
+# name: center
+# key: center
+# --
+
+\begin{center}
+$0
+\end{center}

@@ -1,0 +1,6 @@
+# author dosas
+# name: arraystretch
+# key: arraystretch
+# --
+
+\renewcommand{\arraystretch}{1.4 $0}

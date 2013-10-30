@@ -1,0 +1,12 @@
+# author dosas
+# name: hyperref
+# key: hyperref
+# --
+
+\usepackage[
+colorlinks=true, 
+linkcolor=black, 
+citecolor=black,
+urlcolor=magenta,
+]{hyperref}
+

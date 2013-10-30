@@ -1,0 +1,11 @@
+# author dosas
+# name: packages
+# key: packages
+# --
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+
+$0

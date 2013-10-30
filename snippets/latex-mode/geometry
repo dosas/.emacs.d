@@ -1,0 +1,6 @@
+# author dosas
+# name: geometry
+# key: geometry
+# --
+
+\usepackage[$0 landscape,paper=a4paper,left=20mm,right=20mm,top=25mm,bottom=25mm]{geometry}

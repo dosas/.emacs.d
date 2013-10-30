@@ -1,0 +1,8 @@
+# author dosas
+# name: tikz
+# key: tikz
+# --
+
+\begin{tikzpicture}[scale=$1]
+$0
+\end{tikzpicture}
