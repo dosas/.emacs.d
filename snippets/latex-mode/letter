@@ -1,0 +1,75 @@
+
+# author dosas
+# name: letter
+# key: letter
+# --
+
+%seen on: http://meinnoteblog.wordpress.com/2010/11/12/latex-vorlagen-fur-briefe-und-rechnung/
+
+
+\documentclass[
+fromlogo=false,
+fromalign=left, %% briefkopf 
+backaddress=off, %% the underlined address
+%fromphone=true,
+%fromemail=true,
+enlargefirstpage,
+a4paper,
+DINmtext]
+{scrlttr2}
+
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{pdfpages}
+\usepackage[]{geometry}
+\usepackage{textpos}
+
+%\makeatletter
+%\@setplength{firstheadhpos}{32mm}
+%\@setplength{toaddrvpos}{30mm}
+%\@setplength{toaddrhpos}{32mm}
+%\@setplength{firstfootvpos}{330mm}
+%\@setplength{sigbeforevskip}{13mm}
+%\makeatother
+
+%\setlength{\TPHorizModule}{1cm} % Horizontale Einheit
+%\setlength{\TPVertModule}{1cm} % Vertikale Einheit
+
+\setkomavar{fromname}{$1}
+\setkomavar{fromaddress}{$2}
+%\setkomavar{fromphone}{}
+%\setkomavar{fromemail}{}
+
+\setkomavar{date}{den \today}
+\setkomavar{place}{$3}
+\setkomavar{signature}{%6}
+
+\setkomavar{subject}{$4}
+
+\renewcommand*{\raggedsignature}{\raggedright}
+
+\begin{document}
+
+\begin{letter}{
+$5
+}
+
+\opening{$6}
+
+$0
+
+\closing{Mit freundlichen Gr\"u{\ss}en}
+
+%\begin{textblock}{0.6}(-.6,-2.2)
+%\includegraphics[scale=0.9]{}
+%\end{textblock}
+
+\end{letter}
+
+\end{document}
+
+
+
+
+
+

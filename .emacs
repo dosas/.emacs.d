@@ -9,6 +9,10 @@
 ;;; make backspace behave as usual  (http://www.gnu.org/software/emacs/manual/html_node/emacs/DEL-Does-Not-Delete.html)
 ;(normal-erase-is-backspace-mode 0)
 
+;;; set frame size
+(if window-system
+    (set-frame-size (selected-frame) 140 45))
+
 ;;; C-h does same thing as in bash
 (global-set-key (kbd "C-h") 'delete-backward-char)
 
@@ -46,17 +50,15 @@
   ;; If there is more than one, they won't work right.
  )
 
+;; php mode (http://php-mode.sourceforge.net/)
+;; ================================================
+(add-to-list 'load-path "~/.emacs.d/php-mode-1.5.0")
+(require 'php-mode)
 
 ;; tramp (editing remote files over ssh scp rsync
 ;; ==============================================
-;(add-to-list 'load-path "~/emacs/tramp/lisp/")
-;;(add-to-list 'load-path "~/emacs/tramp/contrib/")
-;(require 'tramp)
-;(setq tramp-verbose 10)
-;(setq tramp-default-method "scp") ;; use sssh instead of scp
-;(add-to-list 'backup-directory-alist
-;	     (cons tramp-file-name-regexp nil))
-
+(require 'tramp)
+(setq tramp-default-method "ssh")
 
 ;; set autosave #filesthatlooklikethis# to /tmp
 ;; ============================================
@@ -131,6 +133,9 @@
 (load "~/.emacs.d/auctex-11.87/auctex.el" nil t t)
 (load "~/.emacs.d/auctex-11.87/preview/preview-latex.el" nil t t)
 
+;; not working
+(setq TeX-engine 'pdflatex)
+
 ;; reload doc view after latex compilation
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 (setq TeX-PDF-mode t) ;; use .pdf instead of .dvi
@@ -172,5 +177,78 @@
 ;; ============================
 (setq compilation-auto-jump-to-first-error t)
 (setq compilation-command "make -C .")
+
+
+;; cedet 
+;; wget http://downloads.sourceforge.net/project/cedet/cedet/cedet-1.1.tar.gz
+;; http://alexott.net/en/writings/emacs-devenv/EmacsCedet.html
+;; ===========================================================
+(load-file "~/.emacs.d/cedet-1.1/common/cedet.el")
+(global-ede-mode 1)                      ; Enable the Project management system
+(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
+(global-srecode-minor-mode 1)            ; Enable template insertion menu
+;(when window-system          ; start speedbar if we're using a window system
+;    (speedbar t))
+
+
+;; differnet buffer switching
+;; http://www.emacswiki.org/emacs/InteractivelyDoThings
+;; =======================
+;(require 'ido)
+;(ido-mode t)
+
+
+;; fill column indicator 
+;; wget http://www.emacswiki.org/emacs/download/fill-column-indicator.el
+;; =====================
+;(add-to-list 'load-path "~/.emacs.d/fill-column-indicator.el")
+;(require 'fill-column-indicator)
+;(define-globalized-minor-mode
+; global-fci-mode fci-mode (lambda () (fci-mode 1)))
+;(global-fci-mode t)
+
+
+;; pyhton-mode
+;; wget https://launchpad.net/python-mode/trunk/6.1.2/+download/python-mode.el-6.1.2.tar.gz
+;; ========================================================================================
+(setq py-install-directory "~/.emacs.d/python-mode.el-6.1.2")
+(add-to-list 'load-path py-install-directory)
+(require 'python-mode)
+
+; use IPython
+(setq-default py-shell-name "ipython")
+(setq-default py-which-bufname "IPython")
+; use the wx backend, for both mayavi and matplotlib
+(setq py-python-command-args
+  '("--gui=wx" "--pylab=wx" "-colors" "Linux"))
+(setq py-force-py-shell-name-p t)
+
+; switch to the interpreter after executing code
+(setq py-shell-switch-buffers-on-execute-p t)
+(setq py-switch-buffers-on-execute-p t)
+; don't split windows
+(setq py-split-windows-on-execute-p nil)
+; try to automagically figure out indentation
+(setq py-smart-indentation t)
+
+
+;; pymacs
+;; git clone https://github.com/pinard/Pymacs.git pymacs-git
+;; =========================================================
+;(add-to-list 'load-path "~/.emacs.d/pymacs-git")
+;(autoload 'pymacs-apply "pymacs")
+;(autoload 'pymacs-call "pymacs")
+;(autoload 'pymacs-eval "pymacs" nil t)
+;(autoload 'pymacs-exec "pymacs" nil t)
+;(autoload 'pymacs-load "pymacs" nil t)
+;(autoload 'pymacs-autoload "pymacs")
+
+
+;; ropemacs (requires pymacs)
+;; sudo aptitude install python-rope
+;; hg clone https://bitbucket.org/agr/ropemacs ropemacs-hg
+;; ========================
+;(require 'pymacs)
+;(pymacs-load "ropemacs" "rope-")
 
 

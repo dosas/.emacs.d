@@ -1,0 +1,11 @@
+# author dosas
+# name: german
+# key: german
+# --
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+
+$0
