@@ -11,7 +11,7 @@
 
 ;;; set frame size
 (if window-system
-    (set-frame-size (selected-frame) 140 45))
+    (set-frame-size (selected-frame) 150 50))
 
 ;;; C-h does same thing as in bash
 (global-set-key (kbd "C-h") 'delete-backward-char)
@@ -183,10 +183,10 @@
 ;; wget http://downloads.sourceforge.net/project/cedet/cedet/cedet-1.1.tar.gz
 ;; http://alexott.net/en/writings/emacs-devenv/EmacsCedet.html
 ;; ===========================================================
-(load-file "~/.emacs.d/cedet-1.1/common/cedet.el")
-(global-ede-mode 1)                      ; Enable the Project management system
-(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
-(global-srecode-minor-mode 1)            ; Enable template insertion menu
+;(load-file "~/.emacs.d/cedet-1.1/common/cedet.el")
+;(global-ede-mode 1)                      ; Enable the Project management system
+;(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
+;(global-srecode-minor-mode 1)            ; Enable template insertion menu
 ;(when window-system          ; start speedbar if we're using a window system
 ;    (speedbar t))
 
@@ -211,25 +211,25 @@
 ;; pyhton-mode
 ;; wget https://launchpad.net/python-mode/trunk/6.1.2/+download/python-mode.el-6.1.2.tar.gz
 ;; ========================================================================================
-(setq py-install-directory "~/.emacs.d/python-mode.el-6.1.2")
-(add-to-list 'load-path py-install-directory)
-(require 'python-mode)
+;(setq py-install-directory "~/.emacs.d/python-mode.el-6.1.2")
+;(add-to-list 'load-path py-install-directory)
+;(require 'python-mode)
 
 ; use IPython
-(setq-default py-shell-name "ipython")
-(setq-default py-which-bufname "IPython")
+;(setq-default py-shell-name "ipython")
+;(setq-default py-which-bufname "IPython")
 ; use the wx backend, for both mayavi and matplotlib
-(setq py-python-command-args
-  '("--gui=wx" "--pylab=wx" "-colors" "Linux"))
-(setq py-force-py-shell-name-p t)
+;(setq py-python-command-args
+;  '("--gui=wx" "--pylab=wx" "-colors" "Linux"))
+;(setq py-force-py-shell-name-p t)
 
 ; switch to the interpreter after executing code
-(setq py-shell-switch-buffers-on-execute-p t)
-(setq py-switch-buffers-on-execute-p t)
+;(setq py-shell-switch-buffers-on-execute-p t)
+;(setq py-switch-buffers-on-execute-p t)
 ; don't split windows
-(setq py-split-windows-on-execute-p nil)
+;(setq py-split-windows-on-execute-p nil)
 ; try to automagically figure out indentation
-(setq py-smart-indentation t)
+;(setq py-smart-indentation t)
 
 
 ;; pymacs
@@ -251,4 +251,5 @@
 ;(require 'pymacs)
 ;(pymacs-load "ropemacs" "rope-")
 
-
+;; ediff
+(setq ediff-split-window-function 'split-window-horizontally)
